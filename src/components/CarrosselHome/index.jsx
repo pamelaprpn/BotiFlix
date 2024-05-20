@@ -1,10 +1,9 @@
 import * as S from './style';
 
-export default function Movies(){
+export default function CarrosselHome(){
   return(
     <>
-    
+
     </>
   )
 }
-
