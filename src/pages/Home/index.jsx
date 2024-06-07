@@ -1,10 +1,10 @@
-import Menu from "./components/Menu";
+import Header from "./Header";
 import * as S from "./style";
 
 export default function Home(){
   return(
     <>
-      <Menu/>
+      <Header/>
     </>
   )
 }
