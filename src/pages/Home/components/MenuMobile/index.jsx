@@ -16,7 +16,7 @@ import waltDisney from '../../../../assets/waltDisney.svg'
 import century from '../../../../assets/century.svg'
 import lionsgate from '../../../../assets/lionsgate.svg'
 
-export default function MenuMobile(){
+export default function MenuSidebar(){
 
   var styles = {
     bmBurgerButton: {

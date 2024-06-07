@@ -1,4 +1,4 @@
-import MenuMobile from "../components/MenuMobile";
+import MenuSidebar from "../components/MenuMobile";
 import * as S from "./style";
 
 
@@ -7,10 +7,10 @@ export default function Header(){
     <>
       <div className="container__header">
           <div className="menu">
-              <MenuMobile pageWrapID={"page-wrap"} outerContainerId={"Header"} />
+              <MenuSidebar pageWrapID={"page-wrap"} outerContainerId={"Header"} />
           </div>
           <div className="search">
-
+            
           </div>
       </div>
 
