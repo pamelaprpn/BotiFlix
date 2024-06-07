@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
+export const containerHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+`
 export const MenuOpcoes = styled.div`
 
   flex-direction: column;
-
-
 
   @media only screen and (min-width: 768px){
     .bmMenu{
@@ -13,12 +17,10 @@ export const MenuOpcoes = styled.div`
   }
 
 `
-
 export const MenuItem = styled.a`
   font-size: 16px;
   padding-bottom: 2rem;
   color: #fff;
-
 `
 export const MenuItemGerero = styled.a`
   font-size: 16px;
@@ -34,15 +36,40 @@ export const MenuGeneros = styled.div`
   border-top: 1px solid #2c2c3a;
   color: #ccc;
   text-decoration: none;
+
 `
 
 export const MenuIcones = styled.div`
   margin-top: 2rem;
-
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 `
 
 export const FilmProducer = styled.img`
-  
-`
+  width: 50px;
 
+`
+export const DesktopMenu = styled.nav`
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 1rem;
+`
+export const MenuItemDesktop = styled.a`
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+`
+export const containerUser = styled.div`
+  display: flex;
+  gap: 15px;
+  padding-top: 1rem;
+  padding-right: 1rem;
+`
 
