@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import * as S from "./style";
 
+
 export default function Home(){
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -10,8 +11,8 @@ export default function Home(){
   useEffect(() => {
     const fetchData = async () => {
       const apiUrl = `https://api.themoviedb.org/3/search/movie?query&includepage=1`;
-      const token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNDc4ZjNiNTgyMjE4NWY5MDQ4ZjVmZDdiOTNmNGRmNiIsInN1YiI6IjY2M2ViY2QxMjBmMWU0YjNlMGEzNzNlNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v9VQRtjOtxRkm4nl6rxVO6jXnr5nsRO_9ydzqFb96Vg";
-
+      const token = import.meta.env.VITE_API_KEY;
+      console.log(token);
       try{
         const response = await fetch(apiUrl, {
           method: 'GET',
