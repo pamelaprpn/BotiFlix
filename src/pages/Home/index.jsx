@@ -12,7 +12,7 @@ export default function Home(){
     const fetchData = async () => {
       const apiUrl = `https://api.themoviedb.org/3/search/movie?query&includepage=1`;
       const token = import.meta.env.VITE_API_KEY;
-      console.log(token);
+      
       try{
         const response = await fetch(apiUrl, {
           method: 'GET',
