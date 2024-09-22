@@ -1,13 +1,13 @@
 import ListaDeBanners from '../ListaDeBanners';
-import './MinhaLista.css'
+import './Secao.css'
 
-const MinhaLista = (props) => {
+const Secao = (props) => {
     return (
         <section className='lista'>
             <h2>{props.titulo}</h2>            
-            <ListaDeBanners />
+            <ListaDeBanners url={props.url} showTitulo={props.showTitulo}/>
         </section>
     )
 }
 
-export default MinhaLista;
+export default Secao;

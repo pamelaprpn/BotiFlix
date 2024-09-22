@@ -4,12 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css'
 import './ListaDeBanners.css'
 
-const ListaDeBanners = () => {
+const ListaDeBanners = (props) => {
 
     const [results, setResults] = useState([]);
 
     useEffect(() => {
-        const apiUrl = `https://api.themoviedb.org/3/tv/popular?language=en-US&page=1`;
+        const apiUrl = props.url;
         const token = import.meta.env.VITE_API_KEY;
         const options = {
             method: 'GET',
@@ -25,7 +25,7 @@ const ListaDeBanners = () => {
                 setResults(response.results)
             })
         }catch(error) {
-            console.log(error.message); //FAZER TRATAMENTO DE ERROS
+            console.log(error.message);
         }
     }, []);
 
@@ -38,8 +38,9 @@ const ListaDeBanners = () => {
             {results.map(result => 
                 <SwiperSlide key={result.id}>
                     <Banner 
+                        showTitulo = {props.showTitulo}
                         key={result.id}
-                        titulo={result.original_name} 
+                        titulo={result.original_name || result.original_title} 
                         src={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
                     />
                 </SwiperSlide>)}
