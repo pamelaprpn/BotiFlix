@@ -1,19 +1,19 @@
-import MenuSidebar from "../components/MenuMobile";
+import MenuUser from "../../../components/MenuUser";
+import BannerHeader from "../Header/components/BannerHeader";
+import MenuHeader from "./components/MenuHeader";
 import * as S from "./style";
 
 
 export default function Header(){
   return(
-    <>
-      <div className="container__header">
-          <div className="menu">
-              <MenuSidebar pageWrapID={"page-wrap"} outerContainerId={"Header"} />
-          </div>
-          <div className="search">
-            
-          </div>
-      </div>
 
-    </>
+    <S.ContainerHeader>
+      <S.ContainerMenu>
+        <MenuHeader pageWrapID={"page-wrap"} outerContainerId={"Header"} />
+        <MenuUser />
+      </S.ContainerMenu>
+      <BannerHeader />
+    </S.ContainerHeader>
+
   )
 }

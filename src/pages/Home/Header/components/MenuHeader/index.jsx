@@ -3,20 +3,20 @@ import {slide as Menu} from 'react-burger-menu'
 import { useEffect, useState } from 'react';
 
 
-import arrowBack from '../../../../assets/arrow-back.svg'
-import search from '../../../../assets/ep_search.svg'
-import user from '../../../../assets/user.svg'
-import universal from '../../../../assets/universal.svg'
-import paramount from '../../../../assets/paramount.svg'
-import columbia from '../../../../assets/columbia.svg'
-import metro from '../../../../assets/metro.svg'
-import dreamWorks from '../../../../assets/dreamWorks.svg'
-import wb from '../../../../assets/wb.svg'
-import waltDisney from '../../../../assets/waltDisney.svg'
-import century from '../../../../assets/century.svg'
-import lionsgate from '../../../../assets/lionsgate.svg'
+import arrowBack from '../../../../../assets/arrow-back.svg'
 
-export default function MenuSidebar(){
+import universal from '../../../../../assets/universal.svg'
+import paramount from '../../../../../assets/paramount.svg'
+import columbia from '../../../../../assets/columbia.svg'
+import metro from '../../../../../assets/metro.svg'
+import dreamWorks from '../../../../../assets/dreamWorks.svg'
+import wb from '../../../../../assets/wb.svg'
+import waltDisney from '../../../../../assets/waltDisney.svg'
+import century from '../../../../../assets/century.svg'
+import lionsgate from '../../../../../assets/lionsgate.svg'
+
+
+export default function MenuHeader(){
 
   var styles = {
     bmBurgerButton: {
@@ -78,8 +78,8 @@ export default function MenuSidebar(){
 
   return(
 
-      <S.containerHeader className="containerHeader">
-        <div className='container-menu'>
+
+        <S.containerMenu className='container-menu'>
           {isMobile ? (
             <Menu styles={styles} width={'50%'} style={styles.bmItem}>
               <S.MenuOpcoes>
@@ -117,12 +117,7 @@ export default function MenuSidebar(){
               <S.MenuItemDesktop href="#" className="menu-item">Gêneros</S.MenuItemDesktop>
             </S.DesktopMenu>
           )};
-        </div>
-        <S.containerUser className='container-user'>
-          <img src={search} alt="Icone de Pesquisar" />
-          <img src={user} alt="Icone do usuário" />
-        </S.containerUser>
-      </S.containerHeader>
+        </S.containerMenu>
 
   );
 }

@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
-export const containerHeader = styled.div`
+export const containerMenu = styled.div`
   display: flex;
-  justify-content: space-between;
   padding: 1rem;
   align-items: center;
+
+
+
 `
 export const MenuOpcoes = styled.div`
 
@@ -59,6 +61,8 @@ export const DesktopMenu = styled.nav`
   justify-content: flex-start;
   gap: 2rem;
   padding: 1rem;
+  position: absolute;
+  
 `
 export const MenuItemDesktop = styled.a`
   color: #fff;
@@ -66,10 +70,5 @@ export const MenuItemDesktop = styled.a`
   font-size: 18px;
   cursor: pointer;
 `
-export const containerUser = styled.div`
-  display: flex;
-  gap: 15px;
-  padding-top: 1rem;
-  padding-right: 1rem;
-`
+
 
