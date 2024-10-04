@@ -1,55 +1,22 @@
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import * as S from "./style";
+import TvSeries from "./components/Secao";
+import TrendingMovies from "./components/Secao" //APENAS DE TESTE/EXEMPLO
 
+export default function Home(){  
 
-export default function Home(){
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
+  const urlTvSeries = `https://api.themoviedb.org/3/tv/popular?language=en-US&page=1` 
+  const urlTrendingMovies = `https://api.themoviedb.org/3/trending/movie/day?language=en-US`
 
+  return (
+    <>
+      <Header />
+      <div className="body" style={{color: 'white'}}>
+        <TvSeries titulo={'TV Series'} url={urlTvSeries} showTitulo={true}/>
+        <TrendingMovies titulo={'Trending Movies'} url={urlTrendingMovies} showTitulo={true}/>
+      </div>
+    </>
+  )
+ }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const apiUrl = `https://api.themoviedb.org/3/search/movie?query&includepage=1`;
-      const token = import.meta.env.VITE_API_KEY;
-      
-      try{
-        const response = await fetch(apiUrl, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`,
-          },
-        });
-
-        if(!response.ok){
-          throw new Error(`Erro: ${response.status}`);
-        }
-
-        const result = await response.json();
-        setData(result);
-
-      }catch(error){
-        setError(error.message);
-      }
-    };
-    fetchData();
-  }, []);
-
-  if(error){
-    return <div>Erro: {error} </div>
-  }
-
-
-  if (data) {
-    return (
-      <>
-        <Header />
-        <div className="body" style={{color: 'white'}}>
-          <h1>Dados da API</h1>
-          {JSON.stringify(data, null, 2)}
-        </div>
-      </>
-    )
-  }
-}
